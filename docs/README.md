@@ -60,6 +60,16 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [Mockup Page Plan](MOCKUP_PAGE_PLAN.md)
 - [Responsive UI Specification](RESPONSIVE_UI_SPEC.md)
 - [Frontend Roadmap](FRONTEND_ROADMAP.md)
+- [Page Specifications](pages/README.md)
+  - [01 — Homepage](pages/01-HOMEPAGE.md)
+  - [02 — Search Results](pages/02-SEARCH_RESULTS.md)
+  - [03 — Listing Detail](pages/03-LISTING_DETAIL.md)
+  - [04 — Create Listing](pages/04-CREATE_LISTING.md)
+  - [05 — Business Profile](pages/05-BUSINESS_PROFILE.md)
+  - [06 — Map Search](pages/06-MAP_SEARCH.md)
+  - [07 — User Account](pages/07-USER_ACCOUNT.md)
+  - [08 — CRM / Leads](pages/08-CRM_LEADS.md)
+  - [09 — Platform Admin](pages/09-PLATFORM_ADMIN.md)
 
 ## 5. Architecture
 - [Architecture](ARCHITECTURE.md)
