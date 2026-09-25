@@ -36,7 +36,23 @@ Documented:
 - go-to-market phases;
 - sales playbook.
 
-All prices and revenue scenarios are planning assumptions and must be validated with real design partners, pilots and conversion/churn data before being treated as final.
+## DOC-06 — Market, competition and SEO
+**Status: complete baseline; demand validation pending.**
+
+Documented:
+- current competitor landscape and pricing references;
+- competitor capability matrix;
+- first-vertical hypothesis;
+- PearTree.pro acquisition SEO strategy;
+- tenant technical SEO specification;
+- keyword architecture;
+- programmatic SEO quality/indexability rules;
+- content roadmap;
+- SEO measurement and revenue attribution.
+
+Current market references show category pricing from low-cost site/app builders into marketplace/directory platforms priced at tens to hundreds of USD per month. PearTree pricing remains a hypothesis until validated with design partners.
+
+SEO explicitly follows people-first/indexability principles and prohibits mass low-value city/category/AI pages.
 
 ## 0.1 — Cloudflare Foundation
 **Status: proof-of-concept issues created.**
@@ -64,7 +80,7 @@ Plans/entitlements, subscription billing, invoices/provider synchronization, pai
 Governed AI services, optional Workers AI/AI Gateway/Vectorize usage, content assistance, classification/scoring, workflow engine, webhooks and integrations. Human review and tenant data boundaries are mandatory.
 
 ## 1.0 — Production platform
-Validated onboarding-to-monetization journey, operational runbooks, D1/R2 recovery testing, measured performance/SLO baseline, security review and first commercial vertical.
+Validated onboarding-to-monetization journey, operational runbooks, D1/R2 recovery testing, measured performance/SLO baseline, security review and validated first commercial vertical.
 
 ## Release gates
 Each increment requires documented acceptance criteria, migrations, automated tests, security/tenant-isolation review, observability and rollback/recovery notes.
