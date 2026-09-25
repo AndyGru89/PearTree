@@ -80,6 +80,34 @@ The current PearTree visual references are now translated into implementation-re
 
 Existing `DESIGN_TOKENS.md`, `BRAND_IDENTITY.md`, `MOCKUP_IMPLEMENTATION_PLAN.md` and `FRONTEND_ROADMAP.md` remain the canonical implementation sources; duplicate specifications were removed.
 
+## DOC-11 — Page-by-page implementation contracts
+**Status: complete baseline for the approved 9-screen mockup set.**
+
+Each approved mockup now has an individual implementation contract covering:
+- route and product surface;
+- user goal and KPI;
+- information hierarchy;
+- components and data requirements;
+- actions and permissions;
+- responsive/mobile behavior;
+- loading, empty, error and success states;
+- SEO/indexability;
+- analytics events;
+- acceptance criteria.
+
+Current documented pages:
+1. Homepage
+2. Search Results
+3. Listing Detail
+4. Create Listing
+5. Business Profile
+6. Map Search
+7. User Account / My Listings
+8. CRM / Leads
+9. PearTree Platform Admin
+
+These specifications live under `docs/pages/` and must be read together with the canonical domain documents.
+
 ## 0.1A — Cloudflare Proofs
 **Status: GitHub issues #1–#6 created.**
 
