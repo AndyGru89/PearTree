@@ -37,22 +37,39 @@ Documented:
 - sales playbook.
 
 ## DOC-06 — Market, competition and SEO
-**Status: complete baseline; demand validation pending.**
+**Status: complete baseline; quantitative keyword validation pending.**
 
 Documented:
 - current competitor landscape and pricing references;
 - competitor capability matrix;
+- Poland-specific market evidence;
+- 10-vertical Poland scorecard;
 - first-vertical hypothesis;
 - PearTree.pro acquisition SEO strategy;
 - tenant technical SEO specification;
 - keyword architecture;
+- 100-page Polish SEO roadmap;
 - programmatic SEO quality/indexability rules;
 - content roadmap;
-- SEO measurement and revenue attribution.
+- SEO measurement and revenue attribution;
+- current Google Search 2026 policy notes.
 
-Current market references show category pricing from low-cost site/app builders into marketplace/directory platforms priced at tens to hundreds of USD per month. PearTree pricing remains a hypothesis until validated with design partners.
+### Current Poland direction
+First reference vertical:
+**home & renovation services**.
 
-SEO explicitly follows people-first/indexability principles and prohibits mass low-value city/category/AI pages.
+Second validation vertical:
+**accounting / B2B professional services**.
+
+These are product-validation choices, not market-size claims.
+
+### SEO release principles
+- no mass low-value city/category pages;
+- no indexation of empty/thin filter combinations;
+- AI text alone never makes a page index-worthy;
+- canonical, sitemap, internal links and domain migration signals must align;
+- FAQ content may be useful, but Google FAQ rich results were deprecated in May 2026 and are not a growth tactic;
+- third-party/user-generated content must be genuinely related to the tenant site's core purpose.
 
 ## 0.1 — Cloudflare Foundation
 **Status: proof-of-concept issues created.**
