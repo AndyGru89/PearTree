@@ -66,6 +66,20 @@ No task begins because it "looks next". It must:
 4. have acceptance/security/testing criteria;
 5. have no unresolved blocking ADR.
 
+## DOC-10 — Mockup consolidation and responsive UI execution
+**Status: complete baseline.**
+
+The current PearTree visual references are now translated into implementation-ready documentation covering:
+- approved mockup direction for public marketplace, mobile and operator console;
+- page-by-page UI information architecture;
+- responsive behavior for 390/430 mobile, 768/834 tablet and 1280/1440+ desktop;
+- mockup coverage plan including loading, empty, error and success states;
+- separation of public marketplace, customer/operator Console and privileged PearTree Admin;
+- localization requirement with Polish as primary launch locale and English as secondary;
+- rule that generated visual mockups are concept references, not literal production data/copy.
+
+Existing `DESIGN_TOKENS.md`, `BRAND_IDENTITY.md`, `MOCKUP_IMPLEMENTATION_PLAN.md` and `FRONTEND_ROADMAP.md` remain the canonical implementation sources; duplicate specifications were removed.
+
 ## 0.1A — Cloudflare Proofs
 **Status: GitHub issues #1–#6 created.**
 
