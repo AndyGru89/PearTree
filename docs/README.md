@@ -8,16 +8,28 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [Roadmap](ROADMAP.md)
 - [Backlog](BACKLOG.md)
 
-## 2. Business, offer and growth
+## 2. Business, market and growth
 - [Offer](OFFER.md)
 - [Pricing](PRICING.md)
 - [Business Model](BUSINESS_MODEL.md)
 - [Unit Economics](UNIT_ECONOMICS.md)
+- [Market Research](MARKET_RESEARCH.md)
+- [Competitor Matrix](COMPETITOR_MATRIX.md)
+- [First Vertical](FIRST_VERTICAL.md)
 - [Marketing](MARKETING.md)
 - [Go-To-Market](GO_TO_MARKET.md)
 - [Sales Playbook](SALES.md)
 
-## 3. Architecture
+## 3. SEO
+- [SEO Module](SEO.md)
+- [SEO Strategy](SEO_STRATEGY.md)
+- [Technical SEO](SEO_TECHNICAL_SPEC.md)
+- [Keyword Architecture](KEYWORD_ARCHITECTURE.md)
+- [Programmatic SEO Policy](PROGRAMMATIC_SEO.md)
+- [SEO Content Plan](SEO_CONTENT_PLAN.md)
+- [SEO Measurement](SEO_MEASUREMENT.md)
+
+## 4. Architecture
 - [Architecture](ARCHITECTURE.md)
 - [Data Model](DATA_MODEL.md)
 - [Modules](MODULES.md)
@@ -27,7 +39,7 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [API Conventions](API_CONVENTIONS.md)
 - [Events & Webhooks](EVENTS_WEBHOOKS.md)
 
-## 4. Governance, security and quality
+## 5. Governance, security and quality
 - [Multi-Tenancy](MULTI_TENANCY.md)
 - [RBAC](RBAC.md)
 - [Security](SECURITY.md)
@@ -40,22 +52,21 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [Definition of Done](DEFINITION_OF_DONE.md)
 - [AI Working Rules](AI_WORKING_RULES.md)
 
-## 5. UX
+## 6. UX
 - [Information Architecture](INFORMATION_ARCHITECTURE.md)
 - [Design System](DESIGN_SYSTEM.md)
 - [Foundation UX Flows](UX_FLOWS.md)
 
-## 6. Product modules
+## 7. Product modules
 - [CMS](CMS.md)
 - [Listings](LISTINGS.md)
 - [Leads & CRM](LEADS_CRM.md)
 - [Commerce](COMMERCE.md)
-- [SEO](SEO.md)
 - [Analytics](ANALYTICS.md)
 - [Notifications](NOTIFICATIONS.md)
 - [AI & Automation](AI_AUTOMATION.md)
 
-## 7. Architecture Decision Records
+## 8. Architecture Decision Records
 - [ADR Index](adr/README.md)
 - [ADR-0001 Cloudflare-native platform](adr/0001-cloudflare-native-platform.md)
 - [ADR-0002 D1 tenancy strategy](adr/0002-d1-tenancy-strategy.md)
