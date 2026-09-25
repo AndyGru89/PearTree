@@ -42,6 +42,9 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [Homepage Blueprint](HOMEPAGE_BLUEPRINT.md)
 - [Listing Card](LISTING_CARD_SPEC.md)
 - [Listing Detail UX](LISTING_DETAIL_UX.md)
+- [Business Profile Page](BUSINESS_PROFILE_PAGE.md)
+- [Auto Dealer Profile](AUTO_DEALER_PROFILE.md)
+- [Vertical Business Templates](VERTICAL_BUSINESS_TEMPLATES.md)
 - [Post Ad Flow](POST_AD_FLOW.md)
 - [Mobile UX](MOBILE_UX.md)
 - [Operator Dashboard](OPERATOR_DASHBOARD.md)
@@ -51,6 +54,7 @@ This directory is the product and engineering source of truth for PearTree.pro.
 ## 5. Architecture
 - [Architecture](ARCHITECTURE.md)
 - [Data Model](DATA_MODEL.md)
+- [Business Profile Data Model](BUSINESS_PROFILE_DATA_MODEL.md)
 - [Modules](MODULES.md)
 - [Infrastructure](INFRASTRUCTURE.md)
 - [Environments](ENVIRONMENTS.md)
