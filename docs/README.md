@@ -8,7 +8,16 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [Roadmap](ROADMAP.md)
 - [Backlog](BACKLOG.md)
 
-## 2. Architecture
+## 2. Business, offer and growth
+- [Offer](OFFER.md)
+- [Pricing](PRICING.md)
+- [Business Model](BUSINESS_MODEL.md)
+- [Unit Economics](UNIT_ECONOMICS.md)
+- [Marketing](MARKETING.md)
+- [Go-To-Market](GO_TO_MARKET.md)
+- [Sales Playbook](SALES.md)
+
+## 3. Architecture
 - [Architecture](ARCHITECTURE.md)
 - [Data Model](DATA_MODEL.md)
 - [Modules](MODULES.md)
@@ -18,7 +27,7 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [API Conventions](API_CONVENTIONS.md)
 - [Events & Webhooks](EVENTS_WEBHOOKS.md)
 
-## 3. Governance, security and quality
+## 4. Governance, security and quality
 - [Multi-Tenancy](MULTI_TENANCY.md)
 - [RBAC](RBAC.md)
 - [Security](SECURITY.md)
@@ -31,12 +40,12 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [Definition of Done](DEFINITION_OF_DONE.md)
 - [AI Working Rules](AI_WORKING_RULES.md)
 
-## 4. UX
+## 5. UX
 - [Information Architecture](INFORMATION_ARCHITECTURE.md)
 - [Design System](DESIGN_SYSTEM.md)
 - [Foundation UX Flows](UX_FLOWS.md)
 
-## 5. Product modules
+## 6. Product modules
 - [CMS](CMS.md)
 - [Listings](LISTINGS.md)
 - [Leads & CRM](LEADS_CRM.md)
@@ -46,7 +55,7 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [Notifications](NOTIFICATIONS.md)
 - [AI & Automation](AI_AUTOMATION.md)
 
-## 6. Architecture Decision Records
+## 7. Architecture Decision Records
 - [ADR Index](adr/README.md)
 - [ADR-0001 Cloudflare-native platform](adr/0001-cloudflare-native-platform.md)
 - [ADR-0002 D1 tenancy strategy](adr/0002-d1-tenancy-strategy.md)
