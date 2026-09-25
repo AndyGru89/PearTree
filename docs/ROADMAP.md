@@ -108,6 +108,29 @@ Current documented pages:
 
 These specifications live under `docs/pages/` and must be read together with the canonical domain documents.
 
+## DOC-12 — Frontend/API implementation blueprint
+**Status: complete baseline.**
+
+The 9 approved page specifications now have implementation-level contracts covering:
+- React component trees;
+- shared view models and UI data contracts;
+- internal API/query/mutation blueprint;
+- frontend read/mutation/data-flow rules;
+- product analytics event catalog;
+- server/client interaction expectations;
+- page-level implementation test contracts.
+
+Shared implementation documents:
+- `FRONTEND_COMPONENT_ARCHITECTURE.md`
+- `UI_DATA_CONTRACTS.md`
+- `API_ENDPOINT_BLUEPRINT.md`
+- `ANALYTICS_EVENT_CATALOG.md`
+- `FRONTEND_DATA_FLOW.md`
+
+Page-specific blueprints live under `docs/pages/implementation/`.
+
+Important: exact transport and React server/client mechanics remain subject to the Workers + vinext proof-of-concept. Tenant isolation, RBAC and server-side authorization remain mandatory regardless of transport.
+
 ## 0.1A — Cloudflare Proofs
 **Status: GitHub issues #1–#6 created.**
 
