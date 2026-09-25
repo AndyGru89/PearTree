@@ -37,22 +37,29 @@ Polish market research, competitor analysis, vertical scorecard, keyword archite
 ## DOC-07 — Brand, mockups and frontend execution
 **Status: complete baseline.**
 
-The approved visual direction is now translated into implementation documentation:
-- PearTree brand identity;
-- color/spacing/radius/shadow tokens;
-- marketplace homepage blueprint;
-- listing card and listing detail specifications;
-- post-ad flow;
-- mobile UX and bottom navigation;
-- operator dashboard;
-- mockup-to-product implementation plan;
-- staged frontend roadmap.
+Brand identity, design tokens, homepage, listing UX, mobile, dashboard and frontend rollout are documented.
 
-### Visual direction
-PearTree should feel:
-**local + trustworthy + natural + premium + human**, not like a generic classifieds template.
+## DOC-08 — Business profiles and vertical company pages
+**Status: complete baseline.**
 
-The generated mockups are design references, not pixel-perfect contracts. Production implementation must use real copy, real data models, responsive states and accessibility rules from the source-of-truth docs.
+PearTree now includes a reusable public company-profile layer, not only individual listings.
+
+Documented:
+- generic Business Profile / Company Page;
+- company hero, trust signals, offers, services, reviews, about, contact and lead capture;
+- multi-location company support;
+- Business -> Location -> Listing/Service/Lead relationships;
+- dedicated Auto Dealer / Komis profile;
+- vehicle inventory, financing, trade-in and test-drive lead flows;
+- reusable templates for workshops, accounting, renovation, real estate, beauty, wedding/events, pet services, local shops and B2B firms;
+- SEO/indexability and monetization rules;
+- verification is separate from paid plans.
+
+### Architectural principle
+Do **not** fork PearTree into separate products for every industry.
+
+Use:
+**one Business Profile engine + vertical schemas + vertical UI blocks + category-specific lead forms.**
 
 ## 0.1 — Cloudflare Foundation
 **Status: proof-of-concept issues created.**
@@ -65,20 +72,28 @@ First implementation gate:
 5. implement from approved GitHub issues;
 6. begin broader Foundation only after green proof-of-concepts.
 
-## 0.2 — CMS + Listings
-Includes the first production implementation of the documented public marketplace, listing cards, detail pages, search/category surfaces and create-listing workflow.
+## 0.2 — CMS + Listings + Business Profiles
+First production implementation includes:
+- public marketplace;
+- listing browse/detail;
+- search/category surfaces;
+- create-listing;
+- company profiles;
+- company offers/services;
+- vertical business templates;
+- initial Auto Dealer/Komis template.
 
 ## 0.3 — Leads + CRM
-Lead capture, inbox, pipeline, assignments, notifications and operator workflows.
+Lead capture, company inquiry forms, inbox, pipeline, assignments, notifications and operator workflows.
 
 ## 0.4 — Commerce
-Plans/entitlements, subscriptions, paid listings, promotions and financial auditability.
+Plans/entitlements, subscriptions, paid listings, premium company profiles, promotions and financial auditability.
 
 ## 0.5 — AI + Automation
 Governed AI assistance, workflow automation, integrations and optional Cloudflare AI services.
 
 ## 1.0 — Production platform
-Validated onboarding-to-monetization journey, operational runbooks, recovery testing, measured SLOs, security review, polished responsive frontend and validated first commercial vertical.
+Validated onboarding-to-monetization journey, operational runbooks, recovery testing, measured SLOs, security review, polished responsive frontend and validated commercial verticals.
 
 ## Release gates
 Each increment requires documented acceptance criteria, migrations, automated tests, security/tenant-isolation review, accessibility, observability and rollback/recovery notes.
