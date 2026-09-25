@@ -33,7 +33,22 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [SEO Content Plan](SEO_CONTENT_PLAN.md)
 - [SEO Measurement](SEO_MEASUREMENT.md)
 
-## 4. Architecture
+## 4. Brand, UX and frontend
+- [Brand Identity](BRAND_IDENTITY.md)
+- [Design System](DESIGN_SYSTEM.md)
+- [Design Tokens](DESIGN_TOKENS.md)
+- [Information Architecture](INFORMATION_ARCHITECTURE.md)
+- [Foundation UX Flows](UX_FLOWS.md)
+- [Homepage Blueprint](HOMEPAGE_BLUEPRINT.md)
+- [Listing Card](LISTING_CARD_SPEC.md)
+- [Listing Detail UX](LISTING_DETAIL_UX.md)
+- [Post Ad Flow](POST_AD_FLOW.md)
+- [Mobile UX](MOBILE_UX.md)
+- [Operator Dashboard](OPERATOR_DASHBOARD.md)
+- [Mockup Implementation Plan](MOCKUP_IMPLEMENTATION_PLAN.md)
+- [Frontend Roadmap](FRONTEND_ROADMAP.md)
+
+## 5. Architecture
 - [Architecture](ARCHITECTURE.md)
 - [Data Model](DATA_MODEL.md)
 - [Modules](MODULES.md)
@@ -43,7 +58,7 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [API Conventions](API_CONVENTIONS.md)
 - [Events & Webhooks](EVENTS_WEBHOOKS.md)
 
-## 5. Governance, security and quality
+## 6. Governance, security and quality
 - [Multi-Tenancy](MULTI_TENANCY.md)
 - [RBAC](RBAC.md)
 - [Security](SECURITY.md)
@@ -55,11 +70,6 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [SLO](SLO.md)
 - [Definition of Done](DEFINITION_OF_DONE.md)
 - [AI Working Rules](AI_WORKING_RULES.md)
-
-## 6. UX
-- [Information Architecture](INFORMATION_ARCHITECTURE.md)
-- [Design System](DESIGN_SYSTEM.md)
-- [Foundation UX Flows](UX_FLOWS.md)
 
 ## 7. Product modules
 - [CMS](CMS.md)
