@@ -3,21 +3,45 @@
 Roadmap is capability-based; dates are intentionally not committed before sizing.
 
 ## DOC-01 — Product definition
-Vision, PRD, Cloudflare-native architecture, conceptual data model, roadmap. **Gate:** no feature implementation before this baseline is reviewed.
+**Status: complete baseline.**
+
+Vision, PRD, Cloudflare-native architecture, conceptual data model and roadmap are defined.
 
 ## DOC-02 — Governance & security
-Multi-tenancy specification, RBAC matrix, threat model, security/privacy baseline, ADR template, contribution rules and Definition of Done.
+**Status: complete baseline.**
 
-Required early ADRs:
-- Cloudflare Workers + vinext runtime.
-- D1 as primary relational store and tenancy strategy.
-- R2 media/storage policy.
-- Queues job semantics and idempotency.
-- Authentication/session architecture on Workers.
-- CI/CD and environment isolation.
+Completed:
+- multi-tenancy specification;
+- RBAC matrix and ownership rules;
+- security baseline;
+- threat model;
+- privacy engineering baseline;
+- Definition of Done;
+- AI/coding-agent working rules;
+- contributing rules;
+- ADR process;
+- accepted ADRs for Cloudflare-native runtime, D1 tenancy, R2 and Queues;
+- proposed ADRs for authentication and CI/CD environment strategy.
+
+Open validation work intentionally moves into DOC-03/0.1 proofs of concept rather than being guessed in documentation.
 
 ## DOC-03 — UX & platform specifications
-Information architecture, Design System specification, domain/project lifecycle, API conventions, observability, testing strategy and Cloudflare infrastructure/deployment plan.
+**Status: next.**
+
+Deliver:
+- information architecture;
+- Design System specification;
+- project/domain lifecycle;
+- API conventions;
+- error model;
+- event/webhook conventions;
+- observability;
+- testing strategy;
+- Cloudflare infrastructure/deployment plan;
+- environment/binding matrix;
+- data migration/recovery runbooks;
+- operational SLO/SLA targets for 0.1;
+- UX flows for onboarding, organization, project, domains, members and admin.
 
 ## 0.1 — Cloudflare Foundation
 Repository/tooling, Wrangler environments, Worker runtime, D1 migrations/bindings, R2 bindings, Queue infrastructure, Identity, Organization/Membership, Project, Branding, Domains, Console/Admin shell, audit events, CI and cross-tenant security tests.
