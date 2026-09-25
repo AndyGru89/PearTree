@@ -27,54 +27,35 @@ Specifications exist for CMS, Listings, Leads/CRM, Commerce, SEO, Analytics, Not
 ## DOC-05 — Business, pricing and go-to-market
 **Status: complete baseline; market validation pending.**
 
-Documented:
-- offer and customer segments;
-- pricing architecture and initial price bands;
-- business model and monetization layers;
-- unit economics formulas and revenue scenarios;
-- marketing positioning and funnel;
-- go-to-market phases;
-- sales playbook.
+Offer, pricing architecture, monetization, unit economics, marketing, GTM and sales playbook are documented.
 
 ## DOC-06 — Market, competition and SEO
 **Status: complete baseline; quantitative keyword validation pending.**
 
-Documented:
-- current competitor landscape and pricing references;
-- competitor capability matrix;
-- Poland-specific market evidence;
-- 10-vertical Poland scorecard;
-- first-vertical hypothesis;
-- PearTree.pro acquisition SEO strategy;
-- tenant technical SEO specification;
-- keyword architecture;
-- 100-page Polish SEO roadmap;
-- programmatic SEO quality/indexability rules;
-- content roadmap;
-- SEO measurement and revenue attribution;
-- current Google Search 2026 policy notes.
+Polish market research, competitor analysis, vertical scorecard, keyword architecture, 100-page SEO roadmap and 2026 Google Search constraints are documented.
 
-### Current Poland direction
-First reference vertical:
-**home & renovation services**.
+## DOC-07 — Brand, mockups and frontend execution
+**Status: complete baseline.**
 
-Second validation vertical:
-**accounting / B2B professional services**.
+The approved visual direction is now translated into implementation documentation:
+- PearTree brand identity;
+- color/spacing/radius/shadow tokens;
+- marketplace homepage blueprint;
+- listing card and listing detail specifications;
+- post-ad flow;
+- mobile UX and bottom navigation;
+- operator dashboard;
+- mockup-to-product implementation plan;
+- staged frontend roadmap.
 
-These are product-validation choices, not market-size claims.
+### Visual direction
+PearTree should feel:
+**local + trustworthy + natural + premium + human**, not like a generic classifieds template.
 
-### SEO release principles
-- no mass low-value city/category pages;
-- no indexation of empty/thin filter combinations;
-- AI text alone never makes a page index-worthy;
-- canonical, sitemap, internal links and domain migration signals must align;
-- FAQ content may be useful, but Google FAQ rich results were deprecated in May 2026 and are not a growth tactic;
-- third-party/user-generated content must be genuinely related to the tenant site's core purpose.
+The generated mockups are design references, not pixel-perfect contracts. Production implementation must use real copy, real data models, responsive states and accessibility rules from the source-of-truth docs.
 
 ## 0.1 — Cloudflare Foundation
 **Status: proof-of-concept issues created.**
-
-Repository/tooling, Wrangler environments, Worker runtime, D1 migrations/bindings, R2 bindings, Queue infrastructure, Identity, Organization/Membership, Project, Branding, Domains, Console/Admin shell, audit events, CI and cross-tenant security tests.
 
 First implementation gate:
 1. validate Workers + vinext;
@@ -85,19 +66,19 @@ First implementation gate:
 6. begin broader Foundation only after green proof-of-concepts.
 
 ## 0.2 — CMS + Listings
-Pages/content model, R2-backed media, navigation, SEO primitives, listing/category/location model, search/filtering and moderation.
+Includes the first production implementation of the documented public marketplace, listing cards, detail pages, search/category surfaces and create-listing workflow.
 
 ## 0.3 — Leads + CRM
-Lead capture, inbox, pipeline, assignments, notifications, consent/audit requirements, queue-based delivery and analytics.
+Lead capture, inbox, pipeline, assignments, notifications and operator workflows.
 
 ## 0.4 — Commerce
-Plans/entitlements, subscription billing, invoices/provider synchronization, paid listings/services and financial auditability.
+Plans/entitlements, subscriptions, paid listings, promotions and financial auditability.
 
 ## 0.5 — AI + Automation
-Governed AI services, optional Workers AI/AI Gateway/Vectorize usage, content assistance, classification/scoring, workflow engine, webhooks and integrations. Human review and tenant data boundaries are mandatory.
+Governed AI assistance, workflow automation, integrations and optional Cloudflare AI services.
 
 ## 1.0 — Production platform
-Validated onboarding-to-monetization journey, operational runbooks, D1/R2 recovery testing, measured performance/SLO baseline, security review and validated first commercial vertical.
+Validated onboarding-to-monetization journey, operational runbooks, recovery testing, measured SLOs, security review, polished responsive frontend and validated first commercial vertical.
 
 ## Release gates
-Each increment requires documented acceptance criteria, migrations, automated tests, security/tenant-isolation review, observability and rollback/recovery notes.
+Each increment requires documented acceptance criteria, migrations, automated tests, security/tenant-isolation review, accessibility, observability and rollback/recovery notes.
