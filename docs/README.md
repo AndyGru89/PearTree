@@ -7,6 +7,12 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [PRD](PRD.md)
 - [Roadmap](ROADMAP.md)
 - [Backlog](BACKLOG.md)
+- [Implementation Sequence](IMPLEMENTATION_SEQUENCE.md)
+- [Screen Map](SCREEN_MAP.md)
+- [Definition of Ready](DEFINITION_OF_READY.md)
+- [MVP Acceptance](MVP_ACCEPTANCE.md)
+- [Release Plan](RELEASE_PLAN.md)
+- [Workstreams](WORKSTREAMS.md)
 
 ## 2. Business, market and growth
 - [Offer](OFFER.md)
