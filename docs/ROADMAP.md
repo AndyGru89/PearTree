@@ -42,58 +42,61 @@ Brand identity, design tokens, homepage, listing UX, mobile, dashboard and front
 ## DOC-08 — Business profiles and vertical company pages
 **Status: complete baseline.**
 
-PearTree now includes a reusable public company-profile layer, not only individual listings.
+PearTree includes a reusable Business Profile layer with company pages, multi-location support, company listings/services/leads and initial Auto Dealer/Komis template.
 
-Documented:
-- generic Business Profile / Company Page;
-- company hero, trust signals, offers, services, reviews, about, contact and lead capture;
-- multi-location company support;
-- Business -> Location -> Listing/Service/Lead relationships;
-- dedicated Auto Dealer / Komis profile;
-- vehicle inventory, financing, trade-in and test-drive lead flows;
-- reusable templates for workshops, accounting, renovation, real estate, beauty, wedding/events, pet services, local shops and B2B firms;
-- SEO/indexability and monetization rules;
-- verification is separate from paid plans.
-
-### Architectural principle
-Do **not** fork PearTree into separate products for every industry.
-
-Use:
+Architectural principle:
 **one Business Profile engine + vertical schemas + vertical UI blocks + category-specific lead forms.**
 
-## 0.1 — Cloudflare Foundation
-**Status: proof-of-concept issues created.**
+## DOC-09 — Implementation governance and release execution
+**Status: complete baseline.**
 
-First implementation gate:
-1. validate Workers + vinext;
-2. validate authentication/session approach;
-3. validate environment-safe D1/R2/Queue bindings;
-4. accept/revise ADR-0005 and ADR-0006;
-5. implement from approved GitHub issues;
-6. begin broader Foundation only after green proof-of-concepts.
+Documented:
+- exact implementation sequence from Cloudflare PoCs through 1.0;
+- complete screen map for public marketplace, account, Console, business management, billing and Admin;
+- Definition of Ready for coding issues;
+- MVP acceptance criteria;
+- Alpha -> Design Partner -> Beta -> Public 1.0 release plan;
+- workstream ownership for Platform, Identity, Marketplace, Business Profiles, CRM, Commerce, SEO/Growth and Frontend.
 
-## 0.2 — CMS + Listings + Business Profiles
-First production implementation includes:
-- public marketplace;
-- listing browse/detail;
-- search/category surfaces;
-- create-listing;
-- company profiles;
-- company offers/services;
-- vertical business templates;
-- initial Auto Dealer/Komis template.
+### Implementation rule
+No task begins because it "looks next". It must:
+1. satisfy Definition of Ready;
+2. belong to a documented workstream;
+3. link to source-of-truth requirements;
+4. have acceptance/security/testing criteria;
+5. have no unresolved blocking ADR.
+
+## 0.1A — Cloudflare Proofs
+**Status: GitHub issues #1–#6 created.**
+
+Validate:
+- Workers + vinext;
+- authentication/session model;
+- D1 tenancy;
+- R2 isolation;
+- Queues idempotency;
+- CI/CD and environments.
+
+## 0.1B — Core Platform
+User/AuthAccount, Organization, Membership, Invitation, Project, Branding, Domain, AuditEvent, Entitlements skeleton, Console and Admin shells.
+
+## 0.2 — Marketplace + Business Profiles
+Public marketplace, listings, listing creation, company profiles, vertical templates and Auto Dealer reference implementation.
 
 ## 0.3 — Leads + CRM
-Lead capture, company inquiry forms, inbox, pipeline, assignments, notifications and operator workflows.
+Lead capture, inbox, pipeline, assignment, notifications and conversion analytics.
 
 ## 0.4 — Commerce
-Plans/entitlements, subscriptions, paid listings, premium company profiles, promotions and financial auditability.
+Plans, Entitlements, subscriptions, paid/promoted listings and premium business profiles.
 
-## 0.5 — AI + Automation
-Governed AI assistance, workflow automation, integrations and optional Cloudflare AI services.
+## 0.5 — SEO Engine
+Sitemaps, canonicals, robots/indexability, structured data, category/location pages, listing/business SEO and quality gates.
 
-## 1.0 — Production platform
-Validated onboarding-to-monetization journey, operational runbooks, recovery testing, measured SLOs, security review, polished responsive frontend and validated commercial verticals.
+## 1.0 — Production
+Accessibility, responsive polish, E2E, security, observability, recovery drills, performance, legal/content readiness and first live pilot.
+
+## MVP exit condition
+A real operator can launch one marketplace project and receive a real lead without custom code.
 
 ## Release gates
 Each increment requires documented acceptance criteria, migrations, automated tests, security/tenant-isolation review, accessibility, observability and rollback/recovery notes.
