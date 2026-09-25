@@ -55,6 +55,10 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [Mobile UX](MOBILE_UX.md)
 - [Operator Dashboard](OPERATOR_DASHBOARD.md)
 - [Mockup Implementation Plan](MOCKUP_IMPLEMENTATION_PLAN.md)
+- [UI Mockups Direction](UI_MOCKUPS_DIRECTION.md)
+- [UI Information Architecture](UI_INFORMATION_ARCHITECTURE.md)
+- [Mockup Page Plan](MOCKUP_PAGE_PLAN.md)
+- [Responsive UI Specification](RESPONSIVE_UI_SPEC.md)
 - [Frontend Roadmap](FRONTEND_ROADMAP.md)
 
 ## 5. Architecture
