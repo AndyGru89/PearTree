@@ -17,28 +17,29 @@ Accepted platform ADRs cover Cloudflare-native runtime, shared D1 tenancy, R2 st
 ## DOC-03 — UX & platform specifications
 **Status: complete baseline.**
 
-Documented:
-- information architecture;
-- Design System;
-- Foundation UX flows;
-- project/domain lifecycle;
-- API conventions and error model;
-- events/queues/webhooks;
-- observability;
-- testing;
-- Cloudflare infrastructure;
-- environment/binding isolation;
-- recovery;
-- service objectives;
-- module boundaries.
+Information architecture, Design System, Foundation UX flows, project/domain lifecycle, API conventions, events/webhooks, observability, testing, Cloudflare infrastructure, environments, recovery, SLO and module boundaries are documented.
 
 ## DOC-04 — Product modules
 **Status: complete baseline.**
 
 Specifications exist for CMS, Listings, Leads/CRM, Commerce, SEO, Analytics, Notifications and AI/Automation.
 
+## DOC-05 — Business, pricing and go-to-market
+**Status: complete baseline; market validation pending.**
+
+Documented:
+- offer and customer segments;
+- pricing architecture and initial price bands;
+- business model and monetization layers;
+- unit economics formulas and revenue scenarios;
+- marketing positioning and funnel;
+- go-to-market phases;
+- sales playbook.
+
+All prices and revenue scenarios are planning assumptions and must be validated with real design partners, pilots and conversion/churn data before being treated as final.
+
 ## 0.1 — Cloudflare Foundation
-**Status: ready for proof-of-concept/implementation planning.**
+**Status: proof-of-concept issues created.**
 
 Repository/tooling, Wrangler environments, Worker runtime, D1 migrations/bindings, R2 bindings, Queue infrastructure, Identity, Organization/Membership, Project, Branding, Domains, Console/Admin shell, audit events, CI and cross-tenant security tests.
 
@@ -47,8 +48,8 @@ First implementation gate:
 2. validate authentication/session approach;
 3. validate environment-safe D1/R2/Queue bindings;
 4. accept/revise ADR-0005 and ADR-0006;
-5. create implementation issues from `BACKLOG.md`;
-6. begin Foundation only after green proof-of-concepts.
+5. implement from approved GitHub issues;
+6. begin broader Foundation only after green proof-of-concepts.
 
 ## 0.2 — CMS + Listings
 Pages/content model, R2-backed media, navigation, SEO primitives, listing/category/location model, search/filtering and moderation.
