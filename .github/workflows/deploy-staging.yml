@@ -1,0 +1,77 @@
+name: Deploy staging
+
+# Staging-only deployment identity (docs/ENVIRONMENTS.md "Deployment identity").
+# Deploys the `peartree-staging` Worker to workers.dev and smoke-tests it at the edge.
+# Production deployment is intentionally not reachable from this workflow.
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-staging
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy peartree-staging and edge smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: staging
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - name: Require staging deployment credentials
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID must be set on the GitHub 'staging' environment."
+            exit 1
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Validate Foundation
+        run: npm run check
+
+      - name: Verify staging build targets peartree-staging only
+        run: node scripts/verify-staging-config.mjs
+
+      - name: Deploy staging
+        id: deploy
+        run: |
+          set -o pipefail
+          npm run deploy:staging 2>&1 | tee deploy.log
+          url="$(grep -oE 'https://peartree-staging\.[a-z0-9-]+\.workers\.dev' deploy.log | head -n 1)"
+          if [ -z "$url" ]; then
+            echo "::error::Deploy output did not include the peartree-staging workers.dev URL."
+            exit 1
+          fi
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+
+      - name: Edge smoke test
+        run: node scripts/smoke.mjs "${{ steps.deploy.outputs.url }}" staging
+
+      - name: Record deployment summary
+        run: |
+          {
+            echo "### peartree-staging"
+            echo "- commit: \`${GITHUB_SHA}\`"
+            echo "- url: ${{ steps.deploy.outputs.url }}"
+            echo "- version: $(grep -oiE 'version id[: ]+[0-9a-f-]{36}' deploy.log | head -n 1 || echo 'see deploy log')"
+          } >> "$GITHUB_STEP_SUMMARY"

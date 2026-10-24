@@ -58,10 +58,44 @@ The local runtime attempted to fetch a realistic `Request.cf` fixture and timed 
 
 The initial CSP permits inline scripts/styles required by the current vinext hydration output. Before tenant-authored content or authenticated UI ships, replace this compatibility allowance with a nonce/hash-based policy and verify SSR, route handlers and error responses. HSTS is intentionally deferred until the production hostname and certificate path are verified at Cloudflare's edge.
 
+## Staging deployment path
+
+Staging is deployed by `.github/workflows/deploy-staging.yml`, a dedicated deployment identity separate from human developer credentials (see `docs/ENVIRONMENTS.md`):
+
+- triggers: push to `main` and manual `workflow_dispatch` only, never pull requests;
+- runs in the GitHub `staging` environment and reads only `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` from it;
+- the token is account-scoped with **Workers Scripts: Edit** only, with no zone, DNS, D1, R2, Queues or KV permissions, and is never a global API key;
+- `scripts/verify-staging-config.mjs` aborts the deploy unless the built Worker is `peartree-staging` with no domains/routes and only the `ASSETS`, `IMAGES` and `APP_ENV=staging` bindings;
+- after deploy, `scripts/smoke.mjs <workers.dev URL> staging` checks the homepage, CSS/JS assets, security headers, the `/api/health` body and `Cache-Control: no-store`, and that nothing redirects to a production domain.
+
+The same steps work from an authenticated workstation:
+
+```bash
+npm run build:staging && node scripts/verify-staging-config.mjs
+npm run deploy:staging
+node scripts/smoke.mjs https://peartree-staging.<account-subdomain>.workers.dev staging
+```
+
+### Rollback
+
+1. List the Worker's deployments and versions: `cf workers deployments list --worker peartree-staging`.
+2. Redeploy the previous known-good version to 100% traffic with `cf workers deployments create --worker peartree-staging` (`percentage` strategy, the previous `version_id` at 100).
+3. Re-run `scripts/smoke.mjs` against the staging URL.
+4. Source rollback: revert the offending commit on `main`; the staging workflow redeploys it.
+
+## Local verification evidence (2026-10-24, head `52bf9ca` + staging deploy path)
+
+- `npm ci`, `npm run typecheck`, `npm run build:staging`: pass;
+- `npm audit --omit=dev --audit-level=high`: 0 vulnerabilities;
+- the built `worker.config.json` is `peartree-staging` with no domains and bindings `APP_ENV:text`, `ASSETS:assets` and `IMAGES:images`; a production build is rejected by the staging guard and is the only mode that declares `peartree.pro`/`www.peartree.pro`;
+- `scripts/smoke.mjs` against the local dev runtime (`local`) and against the built staging bundle served by local workerd (`vite preview --mode staging`, reports `staging`): all checks pass, including 6 `/_next/static` CSS/JS assets returning 200;
+- build warnings are non-fatal beta-toolchain notices only: `SOURCEMAP_BROKEN` from rsc/vinext plugins, one `INEFFECTIVE_DYNAMIC_IMPORT` for vinext's default global error shim, and the "unclassified route" notice for `/`.
+
 ## Still required for issue #1 acceptance
 
+- provision the GitHub `staging` environment secrets (or an equivalent scoped token for a workstation deploy);
 - deploy the candidate to the real `peartree-staging` Worker;
 - verify the public staging URL and `/api/health` at Cloudflare's edge;
 - record the deployed version/commit and rollback target.
 
-These steps require authenticated Cloudflare access and are intentionally separate from local proof.
+These steps require authenticated Cloudflare access and are intentionally separate from local proof. As of 2026-10-24 no `peartree-*` Worker exists on the account, so there is no name conflict.
