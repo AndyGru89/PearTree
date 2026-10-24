@@ -1,0 +1,44 @@
+{
+  "name": "peartree",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@11.9.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build --mode production",
+    "build:staging": "vite build --mode staging",
+    "preview": "npm run build:staging && vite preview --mode staging",
+    "typecheck": "cf workers types && tsc --noEmit",
+    "check": "npm run typecheck && npm run build:staging",
+    "deploy": "npm run deploy:staging",
+    "deploy:staging": "vinext-cloudflare deploy --env staging",
+    "deploy:production": "vinext-cloudflare deploy --env production",
+    "cf-typegen": "cf workers types"
+  },
+  "dependencies": {
+    "@vinext/cloudflare": "1.2.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-server-dom-webpack": "19.3.1",
+    "vinext": "1.3.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "2.0.0-beta.v.4",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "@vitejs/plugin-rsc": "0.5.38",
+    "cf": "1.0.0-beta.21",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  },
+  "overrides": {
+    "fflate": "0.8.3",
+    "undici": "7.30.1",
+    "zod": "4.6.7"
+  }
+}

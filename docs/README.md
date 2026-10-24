@@ -119,5 +119,9 @@ This directory is the product and engineering source of truth for PearTree.pro.
 - [ADR-0005 Authentication/session architecture](adr/0005-authentication-session-architecture.md)
 - [ADR-0006 CI/CD and Cloudflare environments](adr/0006-ci-cd-cloudflare-environments.md)
 
+## 9. Foundation implementation evidence
+
+- [Cloudflare Foundation runtime proof](FOUNDATION_RUNTIME.md)
+
 ## Implementation gate
 Foundation coding may begin only from issues derived from the documented backlog and accepted decisions. Proposed ADRs that affect a task must be resolved or validated during the relevant proof-of-concept before production implementation is merged.
