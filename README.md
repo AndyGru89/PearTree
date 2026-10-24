@@ -2,7 +2,7 @@
 
 PearTree.pro is a greenfield, **Cloudflare-native**, multi-tenant SaaS platform for launching and operating complete online businesses and vertical portals.
 
-> Status: documentation baseline complete; implementation has not started.
+> Status: Cloudflare Foundation implementation candidate is in progress; product modules have not started.
 
 ## Product principle
 PearTree is not a generic website builder. A project combines publishing, listings, lead management, commerce, analytics and automation behind one tenant-aware platform.
@@ -23,6 +23,17 @@ Key documents:
 - [Roadmap](docs/ROADMAP.md)
 - [Backlog](docs/BACKLOG.md)
 - [Architecture Decision Records](docs/adr/README.md)
+- [Cloudflare Foundation runtime proof](docs/FOUNDATION_RUNTIME.md)
+
+## Foundation commands
+
+```bash
+npm ci
+npm run dev
+npm run check
+```
+
+`npm run deploy` targets staging by default. Production uses the explicit, protected `npm run deploy:production` path.
 
 ## Engineering rule
 No implementation may bypass tenant isolation, RBAC or accepted ADRs. Material architecture changes require documentation/ADR updates before merge.

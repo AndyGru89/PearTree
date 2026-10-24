@@ -18,7 +18,7 @@ Foundation defaults:
 - object/media storage: Cloudflare R2;
 - asynchronous jobs: Cloudflare Queues;
 - DNS/CDN/perimeter: Cloudflare;
-- configuration/deployment: Wrangler plus version-controlled infrastructure definitions;
+- configuration/deployment: version-controlled Cloudflare definitions using the official Workers/vinext toolchain validated during Foundation;
 - optional later services: KV, Durable Objects, Turnstile, Workers AI, Vectorize and AI Gateway where their workload matches the product need.
 
 The core PearTree production runtime will not depend on a traditional VPS.
@@ -42,6 +42,10 @@ This ADR does not permit business logic to become inseparable from Cloudflare-sp
 If D1 proves unsuitable, the data-access boundary may move relational persistence to PostgreSQL (for example through Hyperdrive) without changing domain contracts.
 
 If vinext compatibility blocks required application behavior, PearTree may use another Workers-compatible framework/runtime path through a replacement ADR.
+
+## Foundation validation note — 2026-10-24
+
+The current official Cloudflare C3 flow for a new vinext application generates typed `cloudflare.config.ts` and deploys through `cf`/`@vinext/cloudflare`, rather than generating `wrangler.jsonc`. PearTree's proof-of-concept follows that official output while it is validated. This is a provisional tooling choice inside the existing Cloudflare-native decision, not a commitment to couple domain code to the beta CLI. Wrangler remains the fallback configuration/deployment path if the typed-config toolchain proves unstable.
 
 ## Validation required before 0.1 implementation
 1. Minimal full-stack app builds and runs on Workers.
