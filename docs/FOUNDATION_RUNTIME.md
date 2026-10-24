@@ -62,7 +62,7 @@ The initial CSP permits inline scripts/styles required by the current vinext hyd
 
 Staging is deployed by `.github/workflows/deploy-staging.yml`, a dedicated deployment identity separate from human developer credentials (see `docs/ENVIRONMENTS.md`):
 
-- triggers: push to `main` and manual `workflow_dispatch` only, never pull requests;
+- triggers: push to `main`, push to `infra/cloudflare-foundation` (temporary, for the Issue #1 proof before merge; remove after PR #7 merges) and manual `workflow_dispatch`; never pull requests or forks;
 - runs in the GitHub `staging` environment and reads only `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` from it;
 - the token is account-scoped with **Workers Scripts: Edit** only, with no zone, DNS, D1, R2, Queues or KV permissions, and is never a global API key;
 - `scripts/verify-staging-config.mjs` aborts the deploy unless the built Worker is `peartree-staging` with no domains/routes and only the `ASSETS`, `IMAGES` and `APP_ENV=staging` bindings;
